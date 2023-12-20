@@ -3,6 +3,9 @@
   hosts: 10.0.0.58
   become: yes
   tasks:
+    - name: Disable SSH host key checking
+      set_fact:
+        ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
     - name: install tomcat9
       ansible.builtin.apt:
         name: tomcat9
