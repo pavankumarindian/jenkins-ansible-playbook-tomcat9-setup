@@ -3,10 +3,6 @@
   hosts: 10.0.0.58
   become: yes
   tasks:
-    - name: Install Java
-      apt:
-        name: openjdk-11-jdk
-        update_cache: yes
     - name: install tomcat9
       ansible.builtin.apt:
         name: tomcat9
