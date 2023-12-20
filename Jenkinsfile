@@ -1,6 +1,6 @@
 ---
 - name: install and configure tomcat9
-  hosts: 172.1.0.79
+  hosts: 10.0.0.58
   become: yes
   tasks:
     - name: Install Java
