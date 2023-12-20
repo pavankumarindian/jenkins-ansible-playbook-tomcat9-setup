@@ -8,17 +8,9 @@ pipeline {
             }
         }
 
-        stage('Adjust Permissions') {
-            steps {
-                sh 'sudo chmod +r /home/ubuntu/inventory.ini'
-            }
-        }
-
         stage('Run Ansible Playbook') {
             steps {
-                script {
-                    sh "ansible-playbook -i /home/ubuntu install_tomcat9.yml"
-                }
+                ansiblePlaybook credentialsId: 'jenkinsAns', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: '/etc/ansible/install_tomcat9.yml', vaultTmpPath: ''
             }
         }
     }
