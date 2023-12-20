@@ -10,7 +10,7 @@ pipeline {
 
         stage('Adjust Permissions') {
             steps {
-                sh 'chmod +r /home/ubuntu/inventory.ini'
+                sh 'sudo chmod +r /home/ubuntu/inventory.ini'
             }
         }
 
