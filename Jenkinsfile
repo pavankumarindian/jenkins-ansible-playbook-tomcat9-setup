@@ -11,7 +11,7 @@ pipeline {
         stage('Run Ansible Playbook') {
             steps {
                 script {
-                    sh "ansible-playbook -i /home/ubuntu install_tomcat9.yml"
+                    sh "ansible-playbook -i /home/ubuntu install_tomcat9.yml -b"
                 }
             }
         }
