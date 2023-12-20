@@ -10,7 +10,7 @@ pipeline {
 
         stage('Run Ansible Playbook') {
             steps {
-                ansiblePlaybook credentialsId: 'jenkins-ansible', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: 'install_tomcat9.yml', vaultTmpPath: ''
+                ansiblePlaybook credentialsId: 'jenkins-Ansible', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: 'install_tomcat9.yml', vaultTmpPath: ''
             }
         }
     }
